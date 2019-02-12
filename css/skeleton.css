@@ -161,9 +161,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #03ACF0; }
 a:hover {
-  color: #33C3F0; }
+  color: #DE22FA; }
 
 
 /* Buttons
@@ -209,9 +209,11 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #bd32f0;
-  border-color: #bd32f0; 
-  background-image: linear-gradient(to right, #8a00bd, #bd32f0);}
+  background-color: #59AD00;
+  border-color: #78CF1C; 
+  background-image: none;
+  text-shadow: 1px 1px 0 #409400;
+  }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -223,8 +225,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #8a00bd;
-  border-color: #8a00bd;
+  background-color: #78CF1C;
+  border-color: #78CF1C;
   background-image: none; }
 
 
@@ -271,7 +273,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #bd32f0;
+  border: 1px solid #D511F2;
   outline: 0; }
 label,
 legend {
