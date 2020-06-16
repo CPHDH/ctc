@@ -71,8 +71,12 @@ echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
 	<div class="header-container">           
 		<?php echo '<div class="site-title"><h1><strong>'.link_to_home_page(option('site_title')).'</strong></h1></div>';?>
 		<nav id="primary-nav">
-			<a href="/items/browse" class="button">Browse</a>
-			<a href="/contact" class="button">Submit</a>
+			<?php if(get_theme_option('nav_quick_label1') && get_theme_option('nav_quick_url1')):?>
+				<a href="<?php echo get_theme_option('nav_quick_url1');?>" class="button"><?php echo get_theme_option('nav_quick_label1');?></a>
+			<?php endif;?>
+			<?php if(get_theme_option('nav_quick_label2') && get_theme_option('nav_quick_url2')):?>
+				<a href="<?php echo get_theme_option('nav_quick_url2');?>" class="button"><?php echo get_theme_option('nav_quick_label2');?></a>
+			<?php endif;?>
 			<a id="search-open" title="search menu" href="#footer-search"><i class="button fa fa-search"></i></a>
 			<a id="menu-open" title="navigation menu" href="#mmenu"><i class="button fa fa-bars"></i></a>
 		</nav>
