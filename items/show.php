@@ -45,7 +45,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
 		    }  
 		}
 		// Include Main Template (switchable based on $type)
-		if($type=='Hyperlink'){
+		if(($type=='Gender Studies Resource') || ($type=='Hyperlink')){
 			include('template-item_hyperlink.php'); 
 		}else{
 			include('template-item_default.php'); 
@@ -95,7 +95,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
 
 <!-- end plugins -->
 	
-<?php if($type!=='Hyperlink'){
+<?php if(($type!=='Gender Studies Resource') && ($type!=='Hyperlink')){
 	echo photoswipe_markup();
 }?>
 <?php echo foot(); ?>

@@ -56,7 +56,12 @@ function do_quick_link($option=null){
 	}
 }	
 function the_description($record){
-	$d=metadata($record,array('Dublin Core','Description'),array('all'=>true)) ? metadata($record,array('Dublin Core','Description'),array('all'=>true)) : ( metadata($record,array('Item Type Metadata','Text'),array('all'=>true)) ? metadata($record,array('Item Type Metadata','Text'),array('all'=>true)) : null );
+	
+	$abstract=metadata($record,array('Dublin Core','Abstract'),array('all'=>true)) ? metadata($record,array('Dublin Core','Abstract'),array('all'=>true)) : null;
+	
+	$d=metadata($record,array('Dublin Core','Description'),array('all'=>true)) ? metadata($record,array('Dublin Core','Description'),array('all'=>true)) : ( metadata($record,array('Item Type Metadata','Text'),array('all'=>true)) ? metadata($record,array('Item Type Metadata','Text'),array('all'=>true)) : $abstract );
+	
+	
 	$i=1;
 	if($d){
 		$html='';

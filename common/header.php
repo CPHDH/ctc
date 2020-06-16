@@ -69,7 +69,7 @@ echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
 
 <header id="main">       
 	<div class="header-container">           
-		<?php echo link_to_home_page('<div class="site-title"><h1><strong>'.option('site_title').'</strong></h1></div>');?>
+		<?php echo '<div class="site-title"><h1><strong>'.link_to_home_page(option('site_title')).'</strong></h1></div>';?>
 		<nav id="primary-nav">
 			<a href="/items/browse" class="button">Browse</a>
 			<a href="/contact" class="button">Submit</a>
