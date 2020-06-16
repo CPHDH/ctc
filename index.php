@@ -9,7 +9,18 @@
 		<?php if(get_theme_option('homepage_text')): ?>	
 			<?php echo text_to_paragraphs(get_theme_option('homepage_text'));?>
 		<?php endif;?>
-		<a href="/contact" class="button button-primary">Submit a new resource</a>&nbsp;&nbsp; <a href="/curriculum" class="button">View curriculum info</a>
+		
+		<?php 
+		if( ($cta_body_text1=get_theme_option('homepage_cta_button_text_1')) && 
+		($cta_body_url1=get_theme_option('homepage_body_cta_button_url_1'))){
+			echo '<a href="'.$cta_body_url1.'" class="button button-primary">'.$cta_body_text1.'</a>&nbsp;&nbsp;';
+		}
+		if( ($cta_body_text2=get_theme_option('homepage_cta_button_text_2')) && 
+		($cta_body_url2=get_theme_option('homepage_body_cta_button_url_2'))){
+			echo '<a href="'.$cta_body_url2.'" class="button">'.$cta_body_text2.'</a>&nbsp;&nbsp;';
+		}		
+		?>
+		
 	</div>
 </section>
 
