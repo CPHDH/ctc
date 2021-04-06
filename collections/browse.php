@@ -32,7 +32,17 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 		<div class="col">					
 	    <h3><?php echo link_to_collection(); ?></h3>
 	    
-	    <p><?php echo snippet(metadata('collection', array('Dublin Core', 'Description')),0,250);?></p>
+		<?php 
+		$abstract=(element_exists('Dublin Core','Abstract') && metadata('collection',array('Dublin Core','Abstract'))) ? 
+		metadata('collection',array('Dublin Core','Abstract')) : 
+		'Abstract is not available';
+		
+		$d=(metadata('collection',array('Dublin Core','Description'))) ? 
+			metadata('collection',array('Dublin Core','Description')) : 
+			$abstract;		
+		
+		?>
+	    <p><?php echo snippet($d,0,250);?></p>
 	
 	    <?php echo link_to_items_browse(__('View the items in %s', 
 		    metadata('collection', array('Dublin Core', 'Title'))), 
