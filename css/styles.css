@@ -27,13 +27,13 @@ input[type="password"] {
   width: 400px;
 }
 textarea {
-  width: 800px;
+  width: 100%;
   min-height: 150px;
 }
 input[type="text"],
 input[type="password"],
 textarea {
-  max-width: 100%;
+  max-width: 800px;
 }
 h2 strong {
   color: #678848;
@@ -368,6 +368,10 @@ footer input[type="text"]:focus,
   border: 1px solid #006db5;
 }
 
+footer input[type="text"] {
+  max-width: none;
+}
+
 /* Homepage */
 #home section {
   padding-top: 2em;
@@ -387,6 +391,32 @@ footer input[type="text"]:focus,
   background-color: transparent;
   padding: 0;
   border: none;
+}
+
+body#home h3 {
+  margin-bottom: 0.25em;
+}
+
+.collections-inner {
+  display: flex;
+  background: #eaeaea;
+}
+
+.collections-inner > div {
+  padding: 1em 2em 1em 1em;
+}
+
+.collections-inner .collection-img img {
+  box-shadow: -0.5em 0 0 #999, -1em 0 0 #bbb, -1.5em 0 0 #ddd;
+}
+.collections-inner .collection-img {
+  display: contents;
+}
+
+@media all and (max-width: 700px) {
+  .collections-inner .collection-img {
+    display: none;
+  }
 }
 
 /* Content */
@@ -565,7 +595,8 @@ article.grid {
   padding: 0 0 2em;
   margin-bottom: 2em;
 }
-article.grid h3 a {
+article.grid h3 a,
+.posts h3 a {
   text-decoration: none;
 }
 
@@ -1136,4 +1167,40 @@ div#contribution-type-form div.inputs {
 .vvvvvvvv-popular a {
   font-size: 360%;
   font-weight: bold;
+}
+
+/* Simple Pages */
+body.page.simple-page article img {
+  width: 100%;
+}
+
+/* CTC Guides Plugin */
+#ctc_toc_container {
+  background: #eaeaea;
+  padding: 1em;
+  margin-bottom: 3em;
+}
+
+#ctc_toc_container ul {
+  list-style-type: upper-roman;
+  margin: 0;
+  padding: 0;
+}
+
+#ctc_toc_container {
+  border-radius: 7px;
+}
+
+#ctc_toc_container li:last-child {
+  margin-bottom: 0;
+}
+
+.to-top {
+  margin-top: -2em;
+  margin-bottom: 1em;
+  text-align: right;
+}
+
+.to-top a {
+  color: #777;
 }

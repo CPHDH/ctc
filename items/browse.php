@@ -2,7 +2,7 @@
 $ref = $_SERVER["HTTP_REFERER"];
 $isSearchResults = $ref == "https://dev-omeka.cleteaching.org/items/search";
 $secondaryNav = $isSearchResults ? "search-results" : "items";
-$pageTitle = $isSearchResults ? __("Search Results") : __("Browse Items");
+$pageTitle = $isSearchResults ? __("Search Results") : __("Browse Resources");
 echo head(["title" => $pageTitle, "bodyclass" => "items browse"]);
 ?>
 <div id="banner">
@@ -26,15 +26,15 @@ echo head(["title" => $pageTitle, "bodyclass" => "items browse"]);
 
         <div class="sort-browse sort">
             <?php
-            $sortLinks[__("Title")] = "Dublin Core,Title";
-            $sortLinks[__("Creator")] = "Dublin Core,Creator";
-            $sortLinks[__("Date Added")] = "added";
-            ?>
+                $sortLinks[__("Title")] = "Dublin Core,Title";
+                $sortLinks[__("Creator")] = "Dublin Core,Creator";
+                $sortLinks[__("Date Added")] = "added";
+                ?>
             <span><?php echo __("Sort by:"); ?>
             </span>
             <?php echo browse_sort_links(
-                $sortLinks
-            ); ?>
+                    $sortLinks
+                ); ?>
         </div>
 
     </div>
@@ -42,16 +42,16 @@ echo head(["title" => $pageTitle, "bodyclass" => "items browse"]);
     <?php endif; ?>
 
     <?php if (!$total_results && $_SERVER["QUERY_STRING"]) {
-                echo "<h2>" . _("No Results. Try again.") . "</h2>";
-                echo $this->partial("items/search-form.php", [
-     "formAttributes" => ["id" => "advanced-search-form"],
-   ]);
-            } ?>
+                    echo "<h2>" . _("No Results. Try again.") . "</h2>";
+                    echo $this->partial("items/search-form.php", [
+      "formAttributes" => ["id" => "advanced-search-form"],
+    ]);
+                } ?>
 
     <div class="flex">
         <?php foreach (loop("items") as $item) {
-                flex_grid_item($item);
-            } ?>
+                    flex_grid_item($item);
+                } ?>
         <!-- insert empty columns to keep orphan items from getting stretched -->
         <div class="col"></div>
         <div class="col"></div>
@@ -62,8 +62,8 @@ echo head(["title" => $pageTitle, "bodyclass" => "items browse"]);
     <?php echo pagination_links(); ?>
 
     <?php fire_plugin_hook("public_items_browse", [
-   "items" => $items,
-   "view" => $this,
+    "items" => $items,
+    "view" => $this,
  ]); ?>
 </div>
 <?php echo foot();

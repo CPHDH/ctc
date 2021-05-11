@@ -59,8 +59,8 @@
             "icons/favicon_32.png"
         ); ?>" />
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo img(
-     "icons/favicon_180.png"
- ); ?>" />
+            "icons/favicon_180.png"
+        ); ?>" />
     <link rel="apple-touch-icon" sizes="192x192" href="<?php echo img(
      "icons/favicon_192.png"
  ); ?>" />
@@ -127,7 +127,7 @@ echo body_tag(["id" => @$bodyid, "class" => @$bodyclass]);
      "show_advanced" => false,
      "form_attributes" => ["id" => "header-query"],
  ]); ?>
-        <div id="advanced-search-aside">&hellip;or go to <a href="/items/search">Advanced Item Search</a>.</div>
+        <div id="advanced-search-aside">&hellip;or go to <a href="/items/search">Advanced Resource Search</a>.</div>
     </div>
 
     <?php if (is_current_url("/")): ?>

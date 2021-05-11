@@ -41,6 +41,14 @@
 
 <section>
     <div class="content container">
+        <h2>Resource <strong>Showcases</strong></h2>
+        <?php echo $this->shortcodes('[guides parent="showcases" length="200" author="false" date="false" more="true"]');?>
+        <?php echo '<a href="/showcases" class="button button-primary">Browse All Showcases</a>'; ?>
+    </div>
+</section>
+
+<section>
+    <div class="content container">
         <h2>Featured <strong>Collections</strong></h2>
         <?php
         $_collections = get_records(
@@ -62,7 +70,7 @@
 
 <section>
     <div class="content container">
-        <h2>Recently Added <strong>Items</strong></h2>
+        <h2>Latest <strong>Resources</strong></h2>
 
         <?php
             $_items = get_records(
@@ -76,7 +84,7 @@
                     flex_grid_item($i);
                 }
                 echo '</div>';
-                echo '<a href="/items/browse" class="button button-primary">Browse All Items</a>';
+                echo '<a href="/items/browse" class="button button-primary">Browse All Resources</a>';
             } else {
                 echo "No recent items found!";
             }
@@ -86,11 +94,5 @@
     </div>
 </section>
 
-<section>
-    <div class="content container">
-        <h2>Featured <strong>Exhibits</strong></h2>
-        <?php echo '<a href="/exhibits/browse" class="button button-primary">Browse All Exhibits</a>'; ?>
-    </div>
-</section>
 <?php echo foot();
 ?>

@@ -81,7 +81,7 @@ echo head(["title" => $pageTitle, "bodyclass" => "collections browse"]);
 
             <?php echo link_to_items_browse(
         __(
-            "View Items"
+            "View Resources"
         ),
         ["collection" => metadata("collection", "id")],
         ["class" => "button"]

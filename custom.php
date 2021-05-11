@@ -4,12 +4,12 @@ function dc_secondary_nav($type = "items")
     if ($type == "items") {
         $links = [
             [
-                "label" => "All Items",
+                "label" => "All Resources",
                 "class" => "browse button",
                 "uri" => "/items/browse",
             ],
             [
-                "label" => "Item Tags",
+                "label" => "Resource Tags",
                 "class" => "tags button",
                 "uri" => "/items/tags",
             ],
@@ -43,7 +43,7 @@ function dc_secondary_nav($type = "items")
                 "uri" => "/search",
             ],
             [
-                "label" => "Advanced Item Search",
+                "label" => "Resource Search",
                 "class" => "search button",
                 "uri" => "/items/search",
             ],
@@ -52,7 +52,7 @@ function dc_secondary_nav($type = "items")
         $links = [
             ["label" => "Items Map", "class" => "map button", "uri" => "/items/map"],
             [
-                "label" => "All Items",
+                "label" => "All Resources",
                 "class" => "map button",
                 "uri" => "/items/browse",
             ],
@@ -547,27 +547,13 @@ function flex_grid_collection($collection)
 
     $d = metadata($collection, ["Dublin Core", "Description"])
         ? metadata($collection, ["Dublin Core", "Description"])
-        : $abstract;
-    $snippet = snippet($d, 0, 400, "... ");
-    $cta = "View collection";
-    $text =
-        '<h3><a href="' .
-        record_url($collection) .
-        '">' .
-        $title .
-        "</a></h3>" .
-        "<p>" .
-        $snippet .
-        "</p>"; ?>
+        : $abstract; ?>
 <article class="collection">
-    <div class="flex-2">
-        <div class="col"><?php echo $text; ?></div>
-        <div class="col">
-            <?php echo '<a class="collection-img" href="' .
-                            record_url($collection) .
-                            '">' .
-                            item_image("square_thumbnail", [], 0, $item) .
-                            "</a>"; ?>
+    <div class="collections-outer">
+        <?php echo '<h3><a href="' .record_url($collection) .'">' .$title ."</a></h3>" ; ?>
+        <div class="collections-inner">
+            <?php echo "<div><div><strong>".__('%s Resources', $collection->totalItems())."</strong></div>" .snippet($d, 0, 400, "... ") ."</div>"; ?>
+            <?php echo '<a class="collection-img" href="' .record_url($collection) .'">' .item_image("square_thumbnail", [], 0, $item) ."</a>"; ?>
         </div>
     </div>
 </article>
@@ -896,9 +882,9 @@ function get_streaming_files($item)
 
         Your browser doesn't support HTML &lt;audio&rt;.
         <a href="<?php echo file_display_url(
-            $file,
-            "original"
-        ); ?>">Download the file</a>.
+        $file,
+        "original"
+    ); ?>">Download the file</a>.
     </audio>
 </div>
 <?php }
