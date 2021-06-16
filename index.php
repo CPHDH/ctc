@@ -41,8 +41,32 @@
 
 <section>
     <div class="content container">
+        <h2>Latest <strong>Resources</strong></h2>
+
+        <?php
+            $_items = get_records(
+            "Item",
+            ["public" => true, "sort_field" => "added", "sort_dir" => "d"],
+            4
+        );
+            if ($_items) {
+                echo '<div class="flex">';
+                foreach ($_items as $i) {
+                    flex_grid_item($i);
+                }
+                echo '</div>';
+                echo '<a href="/items/browse" class="button button-primary">Browse All Resources</a>';
+            } else {
+                echo "No recent items found!";
+            }
+            ?>
+    </div>
+</section>
+
+<section>
+    <div class="content container">
         <h2>Resource <strong>Showcases</strong></h2>
-        <?php echo $this->shortcodes('[guides parent="showcases" length="200" author="false" date="false" more="true"]');?>
+        <?php echo $this->shortcodes('[guides parent="showcases" length="400" author="false" date="false" more="true"]');?>
         <?php echo '<a href="/showcases" class="button button-primary">Browse All Showcases</a>'; ?>
     </div>
 </section>
@@ -68,31 +92,4 @@
     </div>
 </section>
 
-<section>
-    <div class="content container">
-        <h2>Latest <strong>Resources</strong></h2>
-
-        <?php
-            $_items = get_records(
-            "Item",
-            ["public" => true, "sort_field" => "added", "sort_dir" => "d"],
-            4
-        );
-            if ($_items) {
-                echo '<div class="flex">';
-                foreach ($_items as $i) {
-                    flex_grid_item($i);
-                }
-                echo '</div>';
-                echo '<a href="/items/browse" class="button button-primary">Browse All Resources</a>';
-            } else {
-                echo "No recent items found!";
-            }
-            ?>
-
-
-    </div>
-</section>
-
-<?php echo foot();
-?>
+<?php echo foot();?>

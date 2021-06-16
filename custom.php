@@ -552,7 +552,7 @@ function flex_grid_collection($collection)
     <div class="collections-outer">
         <?php echo '<h3><a href="' .record_url($collection) .'">' .$title ."</a></h3>" ; ?>
         <div class="collections-inner">
-            <?php echo "<div><div><strong>".__('%s Resources', $collection->totalItems())."</strong></div>" .snippet($d, 0, 400, "... ") ."</div>"; ?>
+            <?php echo "<div><div class=\"item-count\"><strong>".__('%s Resources', $collection->totalItems())."</strong></div>" .snippet($d, 0, 400, "... ") ."</div>"; ?>
             <?php echo '<a class="collection-img" href="' .record_url($collection) .'">' .item_image("square_thumbnail", [], 0, $item) ."</a>"; ?>
         </div>
     </div>

@@ -381,10 +381,14 @@ footer input[type="text"] {
   background-color: #eaeaea;
 }
 
-#home section p {
+#home section:first-child > div > p {
   background-color: #f2f2f2;
   border: 1px solid #eaeaea;
   padding: 20px;
+}
+
+#home section p {
+  padding: 0 0 20px 0;
 }
 
 #home section:nth-child(even) p {
@@ -399,7 +403,12 @@ body#home h3 {
 
 .collections-inner {
   display: flex;
-  background: #eaeaea;
+  background: #e2e2e2;
+}
+
+.collections-inner .item-count {
+  font-family: Avenir, "Nunito";
+  margin-bottom: 0.75em;
 }
 
 .collections-inner > div {
